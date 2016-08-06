@@ -1,5 +1,5 @@
 @echo off
-:Start 2
+:Start2
 cls
 goto Start
 :start
@@ -10,12 +10,14 @@ echo ---------------------------------------------------------------------------
 echo 1) 1 Random Password 
 echo 2) 5 Random Passwords
 echo 3) 10 Random Passwords
+echo 4) Change Theme (Light; Beta)
 echo Input your choice
 set input=
 set /p input= Choice:
 if %input%==1 goto A if NOT goto Start2
 if %input%==2 goto B if NOT goto Start2
 if %input%==3 goto C if NOT goto Start2
+if %input%==4 goto D if NOT goto Start2
 :A
 cls
 echo Your password is %random%
@@ -24,8 +26,8 @@ echo 1) Go back to the beginning
 echo 2) Exit
 set input=
 set /p input=Choice:
-if %input%==1 goto Start2 if NOT goto Start 2
-if %input%==2 goto Exit if NOT goto Start 2
+if %input%==1 goto Start2 if NOT goto Start2
+if %input%==2 goto Exit if NOT goto Start2
 :Exit
 exit
 :B
@@ -36,8 +38,8 @@ echo 1) Go back to the beginning
 echo 2) Exit
 set input=
 set /p input= Choice:
-if %input%==1 goto Start2 if NOT goto Start 2
-if %input%==1 goto Exit if NOT goto Start 2
+if %input%==1 goto Start2 if NOT goto Start2
+if %input%==2 goto Exit if NOT goto Start2
 :C
 cls
 echo Your 10 passwords are %random%, %random%, %random%, %random%, %random%, %random%, %random%, %random%, %random%, %random%
@@ -46,5 +48,9 @@ echo 1) Go back to the beginning
 echo 2) Exit
 set input=
 set /p input= Choice:
-if %input%==1 goto Start2 if NOT goto Start 2
-if %input%==2 goto Exit if NOT goto Start 2
+if %input%==1 goto Start2 if NOT goto Start2
+if %input%==2 goto Exit if NOT goto Start2
+:D
+cls
+color 80
+goto Start2
